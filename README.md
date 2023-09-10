@@ -17,7 +17,7 @@ Install the required packages. Make sure you have Python 3.6 or later installed:
 pip install scikit-learn==1.0.2 streamlit==1.26.0 pillow==7.1.0 numpy==1.24.3 opencv-python==4.7.0.72 pandas==2.0.2 matplotlib==3.1.2
 ```
 ## Additional Files
-Download the pre-trained model file "img_model.pkl" from the link provided in "Additional Files.txt". Save the downloaded file in the project's root directory.
+Download the pre-trained model file "img_model.pkl" from this [link](https://drive.google.com/drive/folders/1UISX9LN31V_-EP5-vEWz48oMj631595J?usp=sharing) . Save the downloaded file in the project's root directory.
 
 ## Usage
 After installing the required packages and downloading the model file, run the Streamlit app with the following command:
