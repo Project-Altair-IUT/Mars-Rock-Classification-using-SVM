@@ -14,25 +14,22 @@ def _is_hydrothermally_altered(fe3_fe2_ratio, hydration_index):
     indices (presence of hydrated minerals such as sulfates, clays,
     and opaline silica formed through water-rock interaction).
 
+    This detection is critical for identifying past aqueous environments
+    on Mars, as hydrothermal systems are prime astrobiological targets.
+
     Args:
         fe3_fe2_ratio: Ratio of ferric to ferrous iron (Fe3+/Fe2+).
         hydration_index: Normalized hydration mineral abundance index.
 
     Returns:
-        True if both thresholds are exceeded, indicating hydrothermal alteration.
+        True if both thresholds are exceeded, indicating
+        hydrothermal alteration.
     """
     return fe3_fe2_ratio > 0.8 and hydration_index > 0.6
 
 
 def classify_rock(fe3_fe2_ratio, hydration_index, silica_content):
-    """Classify a Martian rock sample based on spectral parameters.
-
-    The classification prioritizes detection of hydrothermal alteration,
-    which is a key indicator of past aqueous activity on Mars. If the
-    Fe3+/Fe2+ ratio and hydration index both exceed their thresholds,
-    the rock is classified as hydrothermally altered. Otherwise, high
-    silica content indicates a volcanic origin, and the remaining
-    samples are classified as sedimentary.
+    """Classify a Martian rock based on spectral parameters.
 
     Args:
         fe3_fe2_ratio: Ratio of ferric to ferrous iron (Fe3+/Fe2+).
@@ -40,7 +37,7 @@ def classify_rock(fe3_fe2_ratio, hydration_index, silica_content):
         silica_content: Normalized silica (SiO2) content fraction.
 
     Returns:
-        A string: 'hydrothermal_altered', 'volcanic', or 'sedimentary'.
+        'hydrothermal_altered', 'volcanic', or 'sedimentary'.
     """
     if _is_hydrothermally_altered(fe3_fe2_ratio, hydration_index):
         return "hydrothermal_altered"
